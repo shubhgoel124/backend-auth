@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 
-export async function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
     const path = request.nextUrl.pathname;
     const ispublicpath = ["/login", "/signup", "/verifyemail", "/forgotpassword", "/resetpassword"].includes(path);
     const token = request.cookies.get('token')?.value;
