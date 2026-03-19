@@ -9,7 +9,7 @@ connectToDatabase();
 export async function POST(request: NextRequest) {
     try {
         const reqbody = await request.json();
-        const { email } = reqbody;
+        const { email } = reqbody; // ye body le raha haii
 
         const user = await User.findOne({ email });
         if (!user) {
