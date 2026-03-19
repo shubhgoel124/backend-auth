@@ -33,7 +33,6 @@ export async function POST(request: NextRequest){
 
         const response = NextResponse.json({ message: "Login successful" }, { status: 200 });
 
-        // Set the JWT token in a cookie
         response.cookies.set("token", token, { httpOnly: true, path: "/" });
 
         return response;
